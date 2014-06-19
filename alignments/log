@@ -1,0 +1,70 @@
+main() {
+  Execution directory: alignments
+  Preparing Training Data [1.4s, cum. 1.7s]
+  995 training, 0 test
+  Training models: 2 stages {
+    Training stage 1: MODEL1 and MODEL1 jointly for 2 iterations {
+      Initializing forward model [16s, cum. 16s]
+      Initializing reverse model [15s, cum. 31s]
+      Joint Train: 995 sentences, jointly {
+        Iteration 1/2 {
+          Sentence 1/995
+          Sentence 6/995
+          Sentence 5/995
+          Sentence 196/995
+          ... 991 lines omitted ...
+        }
+        Iteration 2/2 {
+          Sentence 2/995
+          Sentence 4/995
+          Sentence 3/995
+          ... 992 lines omitted ...
+        }
+      } [1.5s, cum. 32s]
+      saveParams(alignments\stage1.1.params) {
+        Text [2m28s, cum. 2m28s]
+        Binary [5.4s, cum. 2m33s]
+      } [2m33s, cum. 3m6s]
+      saveParams(alignments\stage1.2.params) {
+        Text [2m32s, cum. 2m32s]
+        Binary [5.7s, cum. 2m38s]
+      } [2m38s, cum. 5m44s]
+    } [5m44s, cum. 5m44s]
+    Training stage 2: HMM and HMM jointly for 2 iterations {
+      Joint Train: 995 sentences, jointly {
+        Iteration 1/2 {
+          Sentence 3/995
+          Sentence 2/995
+          Sentence 7/995
+          Sentence 263/995
+          ... 991 lines omitted ...
+        } [8.0s, cum. 8.0s]
+        Iteration 2/2 {
+          Sentence 2/995
+          Sentence 3/995
+          Sentence 1/995
+          Sentence 940/995
+          ... 991 lines omitted ...
+        } [7.4s, cum. 15s]
+      } [15s, cum. 15s]
+      saveParams(alignments\stage2.1.params) {
+        Text [40s, cum. 40s]
+        Binary [5.5s, cum. 46s]
+      } [46s, cum. 1m1s]
+      saveParams(alignments\stage2.2.params) {
+        Text [41s, cum. 41s]
+        Binary [5.6s, cum. 47s]
+      } [47s, cum. 1m49s]
+    } [1m49s, cum. 7m34s]
+  } [7m34s, cum. 7m35s]
+  Aligning training using aligner SoftUnion(HMM:normal,HMM:reversed)@0,500 {
+    Writing alignments to alignments\training {
+      Sentence 0
+      Sentence 1
+      Sentence 2
+      Sentence 279
+      ... 991 lines omitted ...
+    } [2.7s, cum. 2.7s]
+  } [2.7s, cum. 7m38s]
+  Execution directory: alignments
+} [7m38s]

@@ -1,0 +1,23 @@
+main() {
+  Execution directory: output
+  Preparing Training Data {
+    ERROR: java.lang.RuntimeException: File not found: data/test:
+edu.berkeley.nlp.mt.SentencePairReader.getBaseFileNamesFromSource(SentencePairReader.java:671)
+edu.berkeley.nlp.mt.SentencePairReader.getSentencePairIteratorFromSource(SentencePairReader.java:592)
+edu.berkeley.nlp.mt.SentencePairReader$PairDepot$1.newInstance(SentencePairReader.java:92)
+edu.berkeley.nlp.mt.SentencePairReader$PairDepot$1.newInstance(SentencePairReader.java:89)
+edu.berkeley.nlp.util.Iterators$IteratorIterator.getNextIterator(Iterators.java:202)
+edu.berkeley.nlp.util.Iterators$IteratorIterator.<init>(Iterators.java:195)
+edu.berkeley.nlp.mt.SentencePairReader$PairDepot.iterator(SentencePairReader.java:98)
+edu.berkeley.nlp.mt.SentencePairReader$PairDepot.asList(SentencePairReader.java:120)
+edu.berkeley.nlp.mt.SentencePairReader$PairDepot.loadSentenceCache(SentencePairReader.java:137)
+edu.berkeley.nlp.mt.SentencePairReader$PairDepot.<init>(SentencePairReader.java:65)
+edu.berkeley.nlp.mt.SentencePairReader.pairDepotFromSources(SentencePairReader.java:616)
+edu.berkeley.nlp.wordAlignment.Data.loadData(Data.java:77)
+edu.berkeley.nlp.wordAlignment.Main.run(Main.java:101)
+fig.exec.Execution.runWithObjArray(Execution.java:466)
+fig.exec.Execution.run(Execution.java:419)
+edu.berkeley.nlp.wordAlignment.Main.main(Main.java:95)
+custom.main.main(main.java:48)
+    Execution directory: output
+  }

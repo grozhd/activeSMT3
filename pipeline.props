@@ -1,0 +1,141 @@
+# File includes parameteres for all the steps
+
+### 0. General settigns ###
+### Checkers for what has to be done ###
+
+# 0.0 Cut train set?
+cutTrainSet=false
+numberOfSentences=10000
+
+# 0.1. Preprocess data?
+preprocessAll=false
+preprocessTraining=false
+preprocessDev=false
+preprocessTest=false
+preprocessMono=false
+
+# 0.2. Align data?
+align=false
+
+# 0.3. Build language model?
+buildLM=true
+
+# 0.4. Extract phrases?
+extractPhrases=false
+
+# 0.5 Do tuning?
+tune=false
+
+# 0.6 Decode?
+decode=false
+
+# 0.7 Is BLEU score computed for the ?
+computeBLEU=false
+
+# 0.8 (OPTIONAL) Enable active learning
+activeLearningOn=false
+
+# suffixes of the input files to the system (i.e. train.fr-en.fr)
+sourceSuffix=fr
+targetSuffix=en
+
+### 0. Active Learning ###
+ALRandomSelection=true
+ALStepSize=10
+alSourceFile=data/al/sourceData
+alTargetFile=data/al/targetData
+
+### 1. Preprocessing ###
+
+# path to the output folder (leave empty to use current working directory
+# i.e. processed data will be stored in the same folders, unprocessed files
+# will be removed)
+outputFolder=
+
+# path to the folder with full bilingual corpus (training data)
+fullCorpusFolder=data/train_full
+
+# path to the current training folder (usually just a part of full training data)
+currentCorpusFolder=data/train
+
+# path to the development bilingual data (small bilingual dataset used for tuning the system)
+devCorpusFolder=data/dev
+
+# path to the test data
+testCorpusFolder=data/test
+
+# path to monolingual data (for language model estimation)
+monoCorpusFolder=data/mono
+
+# max sentence length in tokens for bilingual data (sentences longer that that will be removed)
+maxSentenceLength=100
+
+### 2. Word alignment ###
+
+# folder to store alignment files
+alignFolder=alignments
+
+# forbid system.exit call, so berkeleyaligner doesn't exit
+forbidSystemCall=true
+
+### 3. Language model estimation ###
+
+# language model order
+lmOrder=5
+
+# output file
+lmOutputFile=4gm.arpa
+
+### 4.Phrase extraction ###
+### you can see parameters description in Berkeley's aligner PhraseExtract.java ###
+
+# alignment directory created by Berkeley aligner v2.1
+baFolder=alignments
+
+# extractors
+extractors=edu.stanford.nlp.mt.train.MosesPharoahFeatureExtractor=phrase-table.gz:edu.stanford.nlp.mt.train.CountFeatureExtractor=phrase-table.gz:edu.stanford.nlp.mt.train.LexicalReorderingFeatureExtractor=lo-hier.msd2-bidirectional-fe.gz
+
+# symmetrization
+symmetrization=grow-diag
+
+# hierarchicalOrientationModel
+hierarchicalOrientationModel=true
+
+# orientationModelType
+orientationModelType=msd2-bidirectional-fe
+
+# split
+split=2
+
+# phiFilter
+phiFilter=1e-4
+
+# endAtLine
+endAtLine=90000000
+
+# maxELen
+maxELen=5
+
+# threads
+threads=16
+
+
+### 5.Tuning ###
+
+# tuning config folder with default config files
+defTuneConfigFolder=configDefault
+
+# folder for new config files
+newTuneConfigFolder=config
+
+# default ini file
+iniDefault=fr-en.ini
+
+# initial wts file
+initialWTS=fr-en.initial.binwts
+
+# epochsNum
+epochsNum=1
+
+# nBest number
+nBest=100
